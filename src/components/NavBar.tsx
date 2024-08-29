@@ -2,7 +2,6 @@ import {
     Box,
     Flex,
     Image,
-    Button,
     Container,
     VStack,
     HStack,
@@ -24,18 +23,6 @@ const NavBar = () => {
     const {  onClose } = useDisclosure();
     const [isOpen, setIsOpen] = useState(false);
     const toggleDrawer = () => setIsOpen(!isOpen);
-
-    const handleScrollTo = (id:string) => {
-        const element = document.getElementById(id);
-        if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        onClose();
-        }
-        else{
-            window.location.href = `/#${id}`;
-            onClose();
-        }
-    };
     
 return (
     <>
