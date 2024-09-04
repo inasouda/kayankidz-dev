@@ -38,9 +38,9 @@ return (
             <Image src={logo} maxH="4.5rem" alt="Logo" />
             <HStack spacing={4} display={{ base: "none", md: "flex" }}>
                 <LinkBtn text="Home" route='/' onClose={onClose}/>
-                <LinkBtn text="Vision and mission"  route='#visionAndMission' onClose={onClose}/>
+                <LinkBtn text="Our Vision"  route='#visionAndMission' onClose={onClose}/>
                 <LinkBtn text="About Us"  route='/#about-us' onClose={onClose}/>
-                <LinkBtn text="Programs"  route='/' onClose={onClose}/>
+                <LinkBtn text="Kayan Program"  route='/' onClose={onClose}/>
                 <LinkBtn text="Events"  route='#events' onClose={onClose}/>
                 <LinkBtn text="Contact Us"  route='/#contact-us' onClose={onClose}/>
             </HStack>
@@ -76,9 +76,9 @@ return (
             >
             <VStack spacing={0} align="start" width="100%">
                 <LinkBtn text='Home' route='/' bgColor='orange.100' onClose={onClose}></LinkBtn>
-                <LinkBtn text='Vision And Mission' route='#visionAndMission'  bgColor='orange.100' onClose={onClose}></LinkBtn>
+                <LinkBtn text='Our Vision' route='#visionAndMission'  bgColor='orange.100' onClose={onClose}></LinkBtn>
                 <LinkBtn text='About Us' route='#about-us' bgColor='orange.100' onClose={onClose}></LinkBtn>
-                <LinkBtn text='Programs' route='/' bgColor='orange.100' onClose={onClose}></LinkBtn>
+                <LinkBtn text='Kayan Program' route='/' bgColor='orange.100' onClose={onClose}></LinkBtn>
                 <LinkBtn text='Events' route='#events' bgColor='orange.100' onClose={onClose}></LinkBtn>
                 <LinkBtn text='Contact Us' route='#contact-us' bgColor='orange.100' onClose={onClose}></LinkBtn>
                 

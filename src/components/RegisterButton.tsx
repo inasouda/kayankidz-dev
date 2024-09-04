@@ -9,23 +9,23 @@ const ChakraButton = chakra(Button, {
     px: { base: 6, md: 8 },
     py: { base: 6, md: 7 },
     fontWeight: 'bold',
-    bgColor: 'orange.400', // Bright orange background
-    color: 'white', // White text color for contrast
-    borderRadius: 'md', // Rounded corners
-    boxShadow: 'md', // Medium shadow for lift effect
-    transition: 'all 0.2s ease-in-out', // Smooth transition for effects
+    bgColor: 'orange.400', 
+    color: 'white', 
+    borderRadius: 'md',
+    boxShadow: 'md', 
+    transition: 'all 0.2s ease-in-out',
     _hover: {
-      bgColor: 'orange.500', // Darker orange on hover
-      boxShadow: 'lg', // Larger shadow on hover
-      transform: 'scale(1.05)', // Slight scaling on hover
+      bgColor: 'orange.500', 
+      boxShadow: 'lg', 
+      transform: 'scale(1.05)', 
     },
     _active: {
-      bgColor: 'orange.600', // Even darker orange when active
-      boxShadow: 'sm', // Smaller shadow when clicked
-      transform: 'scale(0.98)', // Slightly smaller on click
+      bgColor: 'orange.600', 
+      boxShadow: 'sm', 
+      transform: 'scale(0.98)', 
     },
     _focus: {
-      boxShadow: 'outline', // Outline on focus
+      boxShadow: 'outline',
     },
   },
 });

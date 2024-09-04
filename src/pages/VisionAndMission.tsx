@@ -1,7 +1,6 @@
 import { Box, Flex, Heading, Text, Icon } from "@chakra-ui/react";
 import { ViewIcon } from "@chakra-ui/icons";
 
-// Vision component
 const Vision = () => (
     <Box
         p="1rem"
@@ -22,7 +21,6 @@ const Vision = () => (
     </Box>
 );
 
-// Mission component
 // const Mission = () => (
 //     <Box
 //         p="1rem"
@@ -46,7 +44,7 @@ const Vision = () => (
 const VisionAndMission = () => (
     <Flex 
         id="visionAndMission"
-        direction={{ base: "column", md: "row" }} // Stacks vertically on small screens and horizontally on medium and above screens
+        direction={{ base: "column", md: "row" }} 
         alignItems="center"
         justifyContent="center"
         p={4}

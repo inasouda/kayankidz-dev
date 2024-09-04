@@ -13,7 +13,6 @@ const ContactUs: React.FC = () => {
       borderRadius="md"
       boxShadow="md"
     >
-      {/* Header */}
       <Heading 
         as="h2"
         size="lg"

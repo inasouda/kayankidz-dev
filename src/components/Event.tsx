@@ -50,15 +50,15 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
           flex="1"
           w={{ base: "full", lg: "50%" }}
           p={4}
-          maxH="31.25rem" // 500px in rem
+          maxH="31.25rem" 
           overflowY="auto"
           bgColor="#F0F0F0"
           borderRadius="md"
-          border="1px solid #ccc" // Border to make scrollbar area more visible
+          border="1px solid #ccc" 
           boxShadow="md"
-          position="relative" // Positioning context for the overlay
+          position="relative" 
         >
-          {/* Overlay to indicate scroll area */}
+
           <Box
             position="absolute"
             top="0"
@@ -70,7 +70,7 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
             display={{ base: "none", lg: "block" }}
           />
           <SimpleGrid 
-            columns={{ base: 2, md: 2, lg: 3 }} // Responsive columns
+            columns={{ base: 2, md: 2, lg: 3 }}
             spacing={4}
           >
             {images.map((img, index) => (
@@ -78,7 +78,7 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
                 key={index}
                 src={img}
                 alt={`Event Image ${index + 1}`}
-                boxSize={{ base: "9.375rem", md: "12.5rem", lg: "15.625rem" }} // Responsive image size
+                boxSize={{ base: "9.375rem", md: "12.5rem", lg: "15.625rem" }} 
                 borderRadius="md"
                 boxShadow="md"
                 objectFit="cover"
@@ -90,7 +90,7 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
         </Box>
       </Flex>
 
-      {/* Modal for showing the image */}
+
       {selectedImage && (
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
