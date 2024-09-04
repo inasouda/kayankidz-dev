@@ -21,7 +21,7 @@ const carouselSettings = {
 
 const Carousel = () => {
     return (
-        <Box width="100vw" mx="auto" overflow="hidden" height={'30rem'}> {/* Ensures full width */}
+        <Box width="100vw" mx="auto" overflow="hidden" height={'30rem'}>
           <Slider {...carouselSettings}>
             <Box position={'relative'}>
               <StyledImage src={car1} alt="Slide 1"/> 
@@ -51,7 +51,7 @@ const StyledImage = chakra(Image, {
       animation: 'zoom-in-animation 2s ease-in-out',
       transition: 'transform 0.3s ease-in-out',
       height: { base: '25rem', md: '32rem' },
-      mb: { md: '2rem' },
+      // mb: { md: '2rem' },
     },
   });
 

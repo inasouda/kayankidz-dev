@@ -1,4 +1,5 @@
 import { Box, Button, Divider } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
     text: string;
@@ -8,17 +9,27 @@ interface Props {
 }
 
 const LinkBtn = ({ text, route, bgColor, onClose}: Props) => {
+    const nav = useNavigate();
     const handleClick = () => {
-        if (route.startsWith("#")) {
-            // In-page navigation
+        const isHashRoute = route.startsWith("#");
+        if (isHashRoute) {
             const element = document.getElementById(route.slice(1));
+          
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
+                onClose(); 
+            } else {
+
+                alert(route)
+                nav('/')
+                setTimeout(() => {
+                    window.location.hash = `${route}`;
+                  }, 100);
             }
         } else {
-            // Route change
             window.location.href = route;
         }
+
         onClose();
     };
 
