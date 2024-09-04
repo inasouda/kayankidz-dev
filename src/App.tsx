@@ -4,6 +4,7 @@ import './App.css'
 import { Home } from './Home';
 import NavBar from './components/NavBar';
 import theme from "./theme";
+import Register from './pages/Register';
 
 function App() {
 
@@ -13,15 +14,7 @@ function App() {
       <NavBar></NavBar>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/register" element={<Home />} />
-        <Route path="/#events" element={<EventsPage/>} />
-        <Route path="/#about-us" element={<AboutUs/>} />
-        <Route path="/#contact-us" element={<ContactUs/>} />
-        <Route path="/visionAndMission" element={<VisionAndMission />} /> */}
-
-         {/* <Route path="/register" element={<RegistrationForm />} /> */}
-       
-   
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   </ChakraProvider>
