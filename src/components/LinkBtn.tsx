@@ -19,8 +19,6 @@ const LinkBtn = ({ text, route, bgColor, onClose}: Props) => {
                 element.scrollIntoView({ behavior: 'smooth' });
                 onClose(); 
             } else {
-
-                alert(route)
                 nav('/')
                 setTimeout(() => {
                     window.location.hash = `${route}`;
