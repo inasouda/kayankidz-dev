@@ -1,15 +1,9 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-
 import './App.css'
 import { Home } from './Home';
 import NavBar from './components/NavBar';
 import theme from "./theme";
-import EventsPage from './pages/Events';
-import ContactUs from './pages/ContactUs';
-import AboutUs from './pages/AboutUs';
-import VisionAndMission from './pages/VisionAndMission';
 
 function App() {
 
