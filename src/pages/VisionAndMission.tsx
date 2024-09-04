@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Text, Icon } from "@chakra-ui/react";
-import { ViewIcon, SunIcon } from "@chakra-ui/icons";
+import { ViewIcon } from "@chakra-ui/icons";
 
 // Vision component
 const Vision = () => (
