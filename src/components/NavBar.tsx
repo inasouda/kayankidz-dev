@@ -17,37 +17,36 @@ import {
 import { FaBars, FaTimes} from 'react-icons/fa';
 import logo from '../assets/imgs/logo.webp';
 import LinkBtn from './LinkBtn';
-import { useState } from 'react';
 
 const NavBar = () => {
-    const {  onClose } = useDisclosure();
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleDrawer = () => setIsOpen(!isOpen);
+    const { isOpen, onClose, onOpen } = useDisclosure();
+    const toggleDrawer = () => (isOpen ? onClose() : onOpen());
+    
     
 return (
     <>
-    {/* Navigation Bar */}
     <Box
         as="nav"
         bg="white"
         position="sticky"
         top="0"
         zIndex="10000"
-        boxShadow="md"
+        // boxShadow="md"
     >
         <Container maxW="container.xl" h={"5rem"}>
         <Flex justifyContent="space-between" h="20" alignItems="center">
             <Image src={logo} maxH="4.5rem" alt="Logo" />
             <HStack spacing={4} display={{ base: "none", md: "flex" }}>
-            <LinkBtn text="Home"  route='/'/>
-            <LinkBtn text="Mission"  route='/'/>
-            <LinkBtn text="Programs"  route='/'/>
-            <LinkBtn text="About Us"  route='/'/>
-            <LinkBtn text="Contact Us"  route='/'/>
+                <LinkBtn text="Home" route='/' onClose={onClose}/>
+                <LinkBtn text="Vision and mission"  route='#visionAndMission' onClose={onClose}/>
+                <LinkBtn text="About Us"  route='/#about-us' onClose={onClose}/>
+                <LinkBtn text="Programs"  route='/' onClose={onClose}/>
+                <LinkBtn text="Events"  route='#events' onClose={onClose}/>
+                <LinkBtn text="Contact Us"  route='/#contact-us' onClose={onClose}/>
             </HStack>
             <IconButton
             aria-label="Open menu"
-            icon={isOpen ? <FaTimes  style={{ transform: 'scale(1.2)' }}/> : <FaBars style={{ transform: 'scale(1.2)' }} />}
+            icon={isOpen ? <FaTimes  style={{ transform: 'scale(1.4)' }}/> : <FaBars style={{ transform: 'scale(1.4)' }} />}
            
             display={{ base: "flex", md: "none" }}
             onClick={toggleDrawer} 
@@ -63,7 +62,6 @@ return (
         </Container>
     </Box>
 
-    {/* Drawer Menu */}
     <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
@@ -77,11 +75,13 @@ return (
             height="100%"
             >
             <VStack spacing={0} align="start" width="100%">
-                <LinkBtn text='Home' route='/' bgColor='orange.100'></LinkBtn>
-                <LinkBtn text='Mission' route='/'  bgColor='orange.100'></LinkBtn>
-                <LinkBtn text='Programs' route='/' bgColor='orange.100'></LinkBtn>
-                <LinkBtn text='About Us' route='/' bgColor='orange.100'></LinkBtn>
-                <LinkBtn text='Contact Us' route='/' bgColor='orange.100'></LinkBtn>
+                <LinkBtn text='Home' route='/' bgColor='orange.100' onClose={onClose}></LinkBtn>
+                <LinkBtn text='Vision And Mission' route='#visionAndMission'  bgColor='orange.100' onClose={onClose}></LinkBtn>
+                <LinkBtn text='About Us' route='#about-us' bgColor='orange.100' onClose={onClose}></LinkBtn>
+                <LinkBtn text='Programs' route='/' bgColor='orange.100' onClose={onClose}></LinkBtn>
+                <LinkBtn text='Events' route='#events' bgColor='orange.100' onClose={onClose}></LinkBtn>
+                <LinkBtn text='Contact Us' route='#contact-us' bgColor='orange.100' onClose={onClose}></LinkBtn>
+                
             </VStack>
             </Flex>
         </DrawerBody>
