@@ -402,7 +402,6 @@ const Register = () => {
                         )}
                     </FormGroup>
                     
-                    {/* Contact Email  address*/}
                     <FormGroup>
                         <Label htmlFor="email">Contact Email Address</Label>
                         <Input
@@ -419,7 +418,6 @@ const Register = () => {
                         <ErrorMessage>{formik.errors.email}</ErrorMessage>
                         )}
                     </FormGroup>
-                    {/* home address */}
                     <FormGroup>
                         <Label htmlFor="address">Home Address</Label>
                         <Input
@@ -689,22 +687,15 @@ const PageContainer = styled.div`
 const FormGroup = styled.div`
   margin-bottom: 0.7rem; 
   padding: 1rem;
-//   background-color: #fff;
-//   border-radius: 0.5rem; 
-//   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-//   transition: box-shadow 0.2s ease;
-//   &:hover {
-//     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15); 
-//   }
 `;
 const List = styled.ul`
   list-style-type: disc;
-  padding-left: 1.5rem; // Adjust padding as needed
-  font-size: 0.9rem;// Adjust font size as needed
+  padding-left: 1.5rem; 
+  font-size: 0.9rem;
 `;
 
 const ListItem = styled.li`
-  margin-bottom: 0.5rem; // Adjust spacing as needed
+  margin-bottom: 0.5rem; 
 `;
 
 const SectionHeader = styled.h2`
@@ -721,31 +712,15 @@ const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem; 
   font-size: 0.9rem;
-//   font-weight: bold;
   &:after {
     content: ' *';
     color: red;
   }
 `;
 
-// const Input = styled.input`
-//   width: 100%;
-//   padding: 0.75rem; 
-//   border-radius: 0.25rem; 
-//   border: 0.0625rem solid #ccc; 
-//   box-sizing: border-box;
-//   font-size: 0.9rem;
-//   &:focus {
-//     outline: none;
-//     border-color: red;
-//     box-shadow: 0 0 0 0.125rem rgba(66, 133, 244, 0.3); // 2px to rem
-//   }
-// `;
-
 const RadioGroup = styled.div`
   display: flex;
   flex-direction: column; 
-//   margin-bottom: 1rem; 
 `;
 
 const RadioElement = styled.div`
@@ -759,8 +734,8 @@ const RadioInput = styled.input`
 
 const ErrorMessage = styled.div`
   color: red;
-  font-size: 0.7rem; // 14px to rem
-  margin-top: 0.3125rem; // 5px to rem
+  font-size: 0.7rem; 
+  margin-top: 0.3125rem; 
 `;
 
 const Button = styled.button`

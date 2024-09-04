@@ -1,7 +1,8 @@
-import { Box, Heading, Text, Image, SimpleGrid, Flex, useDisclosure, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalBody } from "@chakra-ui/react";
+import { Box, Heading, Text, Image, SimpleGrid, Flex,
+      useDisclosure, Modal, ModalOverlay, ModalContent,
+      ModalCloseButton, ModalBody } from "@chakra-ui/react";
 import React from "react";
 
-// Define the type for the props that the Event component will receive
 interface EventProps {
   title: string;
   description: string;
@@ -9,7 +10,6 @@ interface EventProps {
   bgcolor: string;
 }
 
-// Event component for displaying a single event
 const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
@@ -29,14 +29,14 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
       borderRadius="1.5rem"
     >
       <Flex
-        direction={{ base: "column", lg: "row" }} // Column for small screens, row for large screens
+        direction={{ base: "column", lg: "row" }} 
         align="center"
         justify="center"
         gap={{ base: "4", lg: "8" }}
       >
         <Box
           flex="1"
-          textAlign={{ base: "center", lg: "left" }} // Center for small screens, left for large screens
+          textAlign={{ base: "center", lg: "left" }} 
           p={4}
         >
           <Heading as="h2" size="lg" mb={4}>
@@ -90,9 +90,11 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
         </Box>
       </Flex>
 
+      <Box display="flex" justifyContent="center" alignItems="center" height="50%">
+
 
       {selectedImage && (
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal isOpen={isOpen} onClose={onClose} isCentered>
           <ModalOverlay />
           <ModalContent>
             <ModalCloseButton />
@@ -101,7 +103,10 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
             </ModalBody>
           </ModalContent>
         </Modal>
-      )}
+       )}
+
+        </Box>
+
     </Box>
   );
 };
