@@ -1,5 +1,3 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
 import  { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
