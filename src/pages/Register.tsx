@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
 import  { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -27,7 +29,6 @@ const Register = () => {
       fatherWANm: '',
       address: '',
       postalCode: '',
-      allergies: '',
       email: '',
       emergencyContact:'',
       prevKayanStd:'',
@@ -48,22 +49,24 @@ const Register = () => {
       motherPhoneNo: Yup.string().required('Required'),
       motherWANm: Yup.string().required('Required'),
       fatherNm: Yup.string().required('Required'),
-      fatherPhone: Yup.string().required('Required'),
+      fatherPhoneNo: Yup.string().required('Required'),
       fatherWANm: Yup.string().required('Required'),
       address: Yup.string().required('Required'),
       postalCode: Yup.string().required('Required'),
-      allergies: Yup.string().required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
       emergencyContact:Yup.string().required('Required'),
       prevKayanStd:Yup.string().required('Required'),
-      acceptTerms: Yup.boolean().oneOf([true], 'You must accept the terms and conditions').required('Required'), // Validation for checkbox
-
+      acceptTerms: Yup.boolean().oneOf([true], 'You must accept the terms and conditions').required('Required'), 
 
     }),
     
     onSubmit: async (values, { resetForm }) => {
       try {
-        const response = await axios.post('http://localhost:3000/api/v1/students', values);
+        console.log('inside submit')
+        const uri = process.env.uri || ''
+        const response = await axios.post(uri, values);
+
+        // const response = await axios.post('http://localhost:3000/api/v1/students', values);
         console.log('Server response:', response);
         resetForm();
       } catch (error) {
@@ -301,8 +304,6 @@ const Register = () => {
                     </>
                 )}
 
-            
-
                 {step === 2 && (
                     <>
                     <SectionHeader>Parent / Gurdian Information</SectionHeader>
@@ -354,19 +355,18 @@ const Register = () => {
                     </FormGroup>
 
                     <FormGroup>
-                        <Label htmlFor="fatherNm">Father's Name (First, Last)</Label>
+                        <Label htmlFor="fatherNm">Father's Name</Label>
                         <Input
                         id="fatherNm"
-                        name="fatheNm"
+                        name="fatherNm"
                         type="text"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.fatherNm}
                         placeholder='Please enter Father Name'
-
                         />
                         {formik.touched.fatherNm && formik.errors.fatherNm && (
-                        <ErrorMessage>{formik.errors.fatherNm}</ErrorMessage>
+                        <ErrorMessage>{formik.errors.motherNm}</ErrorMessage>
                         )}
                     </FormGroup>
                     <FormGroup>
@@ -437,7 +437,7 @@ const Register = () => {
                         <Label htmlFor="addpostalCoderess">Postal Code</Label>
                         <Input
                         id="postalCode"
-                        name="apostalCodeddress"
+                        name="postalCode"
                         type="text"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
@@ -604,9 +604,8 @@ const Register = () => {
                 <ErrorMessage>{formik.errors.acceptTerms}</ErrorMessage>
                 )}
             </FormGroup>
-
                     <Button type="button" onClick={handleBack}>Back</Button>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" >Submit</Button>
                     </>
                 )}
 
@@ -688,6 +687,7 @@ const FormGroup = styled.div`
   margin-bottom: 0.7rem; 
   padding: 1rem;
 `;
+
 const List = styled.ul`
   list-style-type: disc;
   padding-left: 1.5rem; 
