@@ -37,7 +37,8 @@ const RegisterButton = () => {
   };
 
   return (
-    <ChakraButton onClick={handleRegisterClick} rightIcon={<CheckIcon />}>
+    // <ChakraButton onClick={handleRegisterClick} rightIcon={<CheckIcon />}>
+    <ChakraButton fontWeight={'bold'} fontSize={'1.2rem'} onClick={handleRegisterClick}>
       Register
     </ChakraButton>
   );
