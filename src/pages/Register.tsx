@@ -62,9 +62,11 @@ const Register = () => {
       try {
         // console.log('inside submit')
         // const uri = process.env.uri || ''
-        const response = await axios.post('https://kayankidz-server.vercel.app', values);
 
-        // const response = await axios.post('http://localhost:3000/api/v1/students', values);
+        // const response = await axios.post('https://kayankidz-server.vercel.app/api/v1/students', values);
+        // const response = await axios.post('https://kayankidz-server-fc671973cdee.herokuapp.com/api/v1/students', values);
+
+        const response = await axios.post('http://localhost:3000/api/v1/students', values);
         console.log('Server response:', response);
         resetForm();
       } catch (error) {
