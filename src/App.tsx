@@ -5,6 +5,8 @@ import { Home } from './Home';
 import NavBar from './components/NavBar';
 import theme from "./theme";
 import Register from './pages/Register';
+import ConfirmationPage from './pages/Confirmation';
+
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/confirmation" element={<ConfirmationPage />} />
+
       </Routes>
     </Router>
   </ChakraProvider>

@@ -1,5 +1,7 @@
 import  { useState } from 'react';
 import { useFormik } from 'formik';
+import {  useNavigate } from 'react-router-dom';
+
 import * as Yup from 'yup';
 import axios from 'axios';
 import styled from 'styled-components';
@@ -9,6 +11,7 @@ import logo from '../assets/imgs/logo2.webp';
 const Register = () => {
   const [step, setStep] = useState(1);
   const [isOtherSelected, setIsOtherSelected] = useState(false);
+  const navigate = useNavigate()
   const formik = useFormik({
     initialValues: {
       studentNameA: '',
@@ -69,6 +72,7 @@ const Register = () => {
         // const response = await axios.post('http://localhost:3000/api/v1/students', values);
         console.log('Server response:', response);
         resetForm();
+        navigate('/confirmation');
       } catch (error) {
         console.error('Error submitting form:', error);
       }
