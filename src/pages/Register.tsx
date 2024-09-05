@@ -62,9 +62,9 @@ const Register = () => {
     
     onSubmit: async (values, { resetForm }) => {
       try {
-        console.log('inside submit')
-        const uri = process.env.uri || ''
-        const response = await axios.post(uri, values);
+        // console.log('inside submit')
+        // const uri = process.env.uri || ''
+        const response = await axios.post('https://kayankidz-server.vercel.app', values);
 
         // const response = await axios.post('http://localhost:3000/api/v1/students', values);
         console.log('Server response:', response);
