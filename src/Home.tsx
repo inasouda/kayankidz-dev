@@ -1,4 +1,4 @@
-import Carousel from "./components/Carousel"
+// import Carousel from "./components/Carousel"
 import Footer from "./components/Footer"
 import Welcome from "./components/Welcome"
 
@@ -11,7 +11,7 @@ export const Home = () => {
   return (
     <div>
        <Welcome/>
-       <Carousel />
+       {/* <Carousel /> */}
        <VisionAndMission/>
        <AboutUs />
        <Events/>
