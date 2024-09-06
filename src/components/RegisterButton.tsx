@@ -1,5 +1,5 @@
 import { Button, chakra } from '@chakra-ui/react';
-import { CheckIcon } from '@chakra-ui/icons';
+// import { CheckIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 
 const ChakraButton = chakra(Button, {
