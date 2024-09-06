@@ -1,6 +1,6 @@
 
 import { Flex, Image } from '@chakra-ui/react';
-import test from '../assets/imgs/Yellow Joyful Back To School_01.png';
+import test from '../assets/imgs/welcomeKayan.webp';
 import RegisterButton from './RegisterButton';
 const Welcome = () => {
   return (
