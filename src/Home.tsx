@@ -10,11 +10,13 @@ import VisionAndMission from "./pages/VisionAndMission"
 export const Home = () => {
   return (
     <div>
+
        <Carousel />
+       <Welcome/>
+
        <VisionAndMission/>
 
        <AboutUs />
-       <Welcome/>
 
        <Events/>
        <ContactUs/>

@@ -6,16 +6,18 @@ const Vision = () => (
         p="1rem"
         // m={{ base: "0rem 0", md: "3rem 2rem" , lg: "3rem "}}
         textAlign="center"
-        bgColor="#008080" 
+        // bgColor="#008080"
+        bgColor= "rgba(0, 128, 128)"
+         
         color="white"
         borderRadius="1.5rem"
         flex="1"
     >
-        <Heading as="h1" size="md" mb={4}>
+        <Text  fontSize="xl"  mb={4} fontWeight="bold">
             <Icon as={ViewIcon} w={8} h={8} mr={2} />
             Our Vision
-        </Heading>
-        <Text fontSize="lg" lineHeight="taller">
+        </Text>
+        <Text fontSize="md" lineHeight="taller">
           We strive to instill strong Islamic values and guide *our children* toward embodying the teachings of the Quran in all aspects of their character. Our goal is to raise Muslim children who thoroughly understand the Arabic language and the Quran, empowering them to apply these principles in their daily lives.
         </Text>
    

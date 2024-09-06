@@ -39,9 +39,9 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
           textAlign={{ base: "center", lg: "left" }} 
           p={4}
         >
-          <Heading as="h2" size="lg" mb={4}>
+          <Text  fontSize="xl" fontWeight={'bold'} mb={4}>
             {title}
-          </Heading>
+          </Text>
           <Text fontSize="md" mb={4}>
             {description}
           </Text>

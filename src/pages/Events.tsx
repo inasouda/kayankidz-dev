@@ -16,8 +16,6 @@ import ramadan12 from "../assets/imgs/ramadan10.webp";
 import ramadan13 from "../assets/imgs/ramadan11.webp"; 
 import ramadan14 from "../assets/imgs/ramadan12.webp"; 
 
-
-
 import hajj1 from "../assets/imgs/hajj.webp"
 import hajj2 from "../assets/imgs/hajj1.webp"
 import hajj3 from "../assets/imgs/hajj3.webp"
@@ -72,8 +70,6 @@ const Events = () => {
           description={hajjEvent.description}
           images={hajjEvent.images}
           bgcolor="#F49754"
-
-
         />
       </VStack>
    

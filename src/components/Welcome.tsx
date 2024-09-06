@@ -1,6 +1,6 @@
 
 import { Image } from '@chakra-ui/react';
-import test from '../assets/imgs/Yellow Joyful Back To School (2).png';
+import test from '../assets/imgs/Yellow Joyful Back To School (5).png';
 const Welcome = () => {
   return (
     <Image 
@@ -8,7 +8,7 @@ const Welcome = () => {
     width={{ base: '100vw' }} 
 
     objectFit={'cover'}  
-    height={{ base: '20rem' }} 
+    height={{ base: '25rem' }} 
     src={test} 
   />
   )
