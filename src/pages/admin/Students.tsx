@@ -34,7 +34,7 @@ const StudentsList: React.FC = () => {
     useEffect(() => {
         const fetchStudents = async () => {
             try {
-                const response = await axios.get<Student[]>('/api/v1/students');
+                const response = await axios.get<Student[]>('https://kayankidz-server-fc671973cdee.herokuapp.com/api/v1/students');
                 setStudents(response.data);
             } catch (error) {
                 console.error("There was an error fetching the students!", error);

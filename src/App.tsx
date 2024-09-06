@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import theme from "./theme";
 import Register from './pages/Register';
 import ConfirmationPage from './pages/Confirmation';
+import StudentsList from './pages/admin/Students';
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
+        <Route path="/students" element={<StudentsList />} />
+
 
       </Routes>
     </Router>

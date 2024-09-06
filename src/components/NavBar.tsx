@@ -43,6 +43,8 @@ return (
                 <LinkBtn text="Kayan Program"  route='/' onClose={onClose}/>
                 <LinkBtn text="Events"  route='#events' onClose={onClose}/>
                 <LinkBtn text="Contact Us"  route='/#contact-us' onClose={onClose}/>
+                <LinkBtn text="Students"  route='/students' onClose={onClose}/>
+
             </HStack>
             <IconButton
             aria-label="Open menu"
@@ -81,6 +83,8 @@ return (
                 <LinkBtn text='Kayan Program' route='/' bgColor='orange.100' onClose={onClose}></LinkBtn>
                 <LinkBtn text='Events' route='#events' bgColor='orange.100' onClose={onClose}></LinkBtn>
                 <LinkBtn text='Contact Us' route='#contact-us' bgColor='orange.100' onClose={onClose}></LinkBtn>
+                {/* <LinkBtn text="Students"  route='/students' onClose={onClose}/> */}
+
                 
             </VStack>
             </Flex>
