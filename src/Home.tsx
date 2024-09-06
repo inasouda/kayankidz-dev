@@ -12,9 +12,10 @@ export const Home = () => {
     <div>
        <Carousel />
        <VisionAndMission/>
-       <Welcome/>
 
        <AboutUs />
+       <Welcome/>
+
        <Events/>
        <ContactUs/>
        <Footer />
