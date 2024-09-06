@@ -9,7 +9,7 @@ const AboutUs = () => {
       bg="gray.100"
       w={{ base: "100%", md: "80%", lg: "100%" }} 
       mx="auto" 
-      my="2rem" 
+      // my="2rem" 
       p="1.5rem"
       borderRadius="lg" 
       color="black"

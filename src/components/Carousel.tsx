@@ -3,12 +3,14 @@ import Slider from 'react-slick';
 import { Box, Image, chakra } from '@chakra-ui/react';
 import car1 from '../assets/imgs/car1.webp'
 import car2 from '../assets/imgs/car2.webp'
-import car3 from '../assets/imgs/car3.webp'
+// import car3 from '../assets/imgs/car3.webp'
+// import welcome from '../assets/imgs/welcome.webp';
+
 import RegisterButton from './RegisterButton';
 
 
 const carouselSettings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -21,8 +23,12 @@ const carouselSettings = {
 
 const Carousel = () => {
     return (
-        <Box width="100vw" mx="auto" overflow="hidden" height={'30rem'}>
+        <Box width="100vw" mx="auto" overflow="hidden" height={{base:'25rem',lg:'30rem'}}>
           <Slider {...carouselSettings}>
+          {/* <Box position={'relative'}>
+              <StyledImage src={welcome} alt="Slide 0"/> 
+              <Overlay>Islamic School</Overlay>
+            </Box> */}
             <Box position={'relative'}>
               <StyledImage src={car1} alt="Slide 1"/> 
               <Overlay>Islamic School</Overlay>
@@ -31,10 +37,10 @@ const Carousel = () => {
               <StyledImage src={car2} alt="Slide 2"/>
               <Overlay>Islamic School</Overlay>
             </Box>
-            <Box position={'relative'}>
+            {/* <Box position={'relative'}>
               <StyledImage src={car3} alt="Slide 3" />
               <Overlay>Islamic School</Overlay>
-            </Box>
+            </Box> */}
           </Slider>
           <RegBtnContainer>
             <RegisterButton />
@@ -76,7 +82,7 @@ const Overlay = chakra('div', {
 const RegBtnContainer = chakra("div", {
     baseStyle: {
       position: "relative",
-      bottom: { base: '8rem', md: '3rem' },
+      bottom:'8rem',
       left: "50%",
       transform: "translateX(-50%)",
       width: "100%",

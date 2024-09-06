@@ -1,5 +1,7 @@
 import Carousel from "./components/Carousel"
 import Footer from "./components/Footer"
+import Welcome from "./components/Welcome"
+
 import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
 import Events from "./pages/Events"
@@ -10,6 +12,8 @@ export const Home = () => {
     <div>
        <Carousel />
        <VisionAndMission/>
+       <Welcome/>
+
        <AboutUs />
        <Events/>
        <ContactUs/>

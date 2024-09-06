@@ -1,10 +1,10 @@
-import { Box, Flex, Heading, Text, Icon } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Icon} from "@chakra-ui/react";
 import { ViewIcon } from "@chakra-ui/icons";
 
 const Vision = () => (
     <Box
         p="1rem"
-        m={{ base: "0rem 0", md: "3rem 2rem" , lg: "3rem "}}
+        // m={{ base: "0rem 0", md: "3rem 2rem" , lg: "3rem "}}
         textAlign="center"
         bgColor="#008080" 
         color="white"
@@ -18,6 +18,7 @@ const Vision = () => (
         <Text fontSize="lg" lineHeight="taller">
           We strive to instill strong Islamic values and guide *our children* toward embodying the teachings of the Quran in all aspects of their character. Our goal is to raise Muslim children who thoroughly understand the Arabic language and the Quran, empowering them to apply these principles in their daily lives.
         </Text>
+   
     </Box>
 );
 
