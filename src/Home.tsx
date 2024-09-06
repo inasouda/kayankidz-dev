@@ -1,4 +1,6 @@
 // import Carousel from "./components/Carousel"
+import '@fontsource/poppins'; 
+
 import Footer from "./components/Footer"
 import Welcome from "./components/Welcome"
 
