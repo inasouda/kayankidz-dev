@@ -64,13 +64,15 @@ const Events = () => {
           title={ramadanEvent.title}
           description={ramadanEvent.description}
           images={ramadanEvent.images}
-          bgcolor="#F49754"
+          bgcolor="#008080"
+
         />
         <Event
           title={hajjEvent.title}
           description={hajjEvent.description}
           images={hajjEvent.images}
-          bgcolor="#008080"
+          bgcolor="#F49754"
+
 
         />
       </VStack>
