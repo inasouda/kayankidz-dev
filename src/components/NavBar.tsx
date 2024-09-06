@@ -43,7 +43,7 @@ return (
                 <LinkBtn text="Kayan Program"  route='/' onClose={onClose}/>
                 <LinkBtn text="Events"  route='#events' onClose={onClose}/>
                 <LinkBtn text="Contact Us"  route='/#contact-us' onClose={onClose}/>
-                <LinkBtn text="Students"  route='/students' onClose={onClose}/>
+                {/* <LinkBtn text="Students"  route='/students' onClose={onClose}/> */}
 
             </HStack>
             <IconButton
