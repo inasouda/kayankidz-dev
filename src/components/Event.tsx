@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Image, SimpleGrid, Flex,
+import { Box, Text, Image, SimpleGrid, Flex,
       useDisclosure, Modal, ModalOverlay, ModalContent,
       ModalCloseButton, ModalBody } from "@chakra-ui/react";
 import React from "react";

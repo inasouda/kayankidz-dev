@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text, Icon} from "@chakra-ui/react";
+import { Box, Flex, Text, Icon} from "@chakra-ui/react";
 import { ViewIcon } from "@chakra-ui/icons";
 
 const Vision = () => (
