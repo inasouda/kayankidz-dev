@@ -1,6 +1,6 @@
 import { Box, Image, Text, VStack, Flex } from "@chakra-ui/react";
-import aboutus from '../assets/imgs/kayan2.webp';
-import artImg from '../assets/imgs/art1.webp';
+import aboutus from '../assets/imgs/startKayanLogo.webp';
+import artImg from '../assets/imgs/aboutus.webp';
 
 const AboutUs = () => {
   return (
@@ -9,9 +9,7 @@ const AboutUs = () => {
       bg="gray.100"
       w={{ base: "100%", md: "80%", lg: "100%" }} 
       mx="auto" 
-      // my="2rem" 
       p="1.5rem"
-      borderRadius="lg" 
       color="black"
       shadow="md"
     >
@@ -26,7 +24,6 @@ const AboutUs = () => {
           <Image
             src={aboutus}
             alt="About Us Image"
-            borderRadius="full" 
             boxSize={{ base: "10rem", lg: "15rem" }}
             mx="auto" 
           />
