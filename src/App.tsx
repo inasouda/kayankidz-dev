@@ -20,8 +20,6 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
         <Route path="/students" element={<StudentsList />} />
-
-
       </Routes>
     </Router>
   </ChakraProvider>

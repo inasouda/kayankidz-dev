@@ -6,6 +6,7 @@ import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
 import Events from "./pages/Events"
 import VisionAndMission from "./pages/VisionAndMission"
+import Program from './pages/Program';
 
 export const Home = () => {
   return (
@@ -14,6 +15,7 @@ export const Home = () => {
        {/* <Carousel /> */}
        <VisionAndMission/>
        <AboutUs />
+       <Program/>
        <Events/>
        <ContactUs/>
        <Footer />
