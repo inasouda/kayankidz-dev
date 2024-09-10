@@ -10,7 +10,6 @@ import isImg2 from '../assets/imgs/isImg2.webp';
 import isImg3 from '../assets/imgs/isImg3.webp';
 import isImg4 from '../assets/imgs/isImg4.webp'
 import isImg5 from '../assets/imgs/isImg5.webp'
-
 import arImg0 from '../assets/imgs/arImg.webp';
 import arImg1 from '../assets/imgs/arImg1.webp';
 import arImg2 from '../assets/imgs/arImg2.webp';
