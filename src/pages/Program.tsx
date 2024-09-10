@@ -43,9 +43,6 @@ const Program: React.FC = () => {
       shadow="md"
       textAlign="center"
     >
-      <Text fontSize="2xl" textAlign="center" fontWeight="bold" mb={4}>
-        Our Program
-      </Text>
 
       <Image
         src={kayanProgram}
@@ -55,6 +52,10 @@ const Program: React.FC = () => {
         display="block"
         mb="2rem"
       />
+
+      <Text fontSize="xl" textAlign="center" fontWeight="bold">
+        Our Program
+      </Text>
 
       <List spacing={4} fontSize="lg" textAlign="left" p={'2rem'} mb={6} mx="auto" maxW="800px">
         <ListItem>
