@@ -1,7 +1,7 @@
 import { Box, Flex, FormControl, FormLabel, Icon, Heading } from "@chakra-ui/react";
 import { EmailIcon, PhoneIcon } from "@chakra-ui/icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const ContactUs: React.FC = () => {
   return (
