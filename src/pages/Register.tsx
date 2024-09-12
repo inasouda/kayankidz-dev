@@ -4,6 +4,7 @@ import {  useNavigate } from 'react-router-dom';
 
 import * as Yup from 'yup';
 import axios from 'axios';
+import emailjs from 'emailjs-com';
 import styled from 'styled-components';
 import { FormLabel } from 'react-bootstrap';
 import logo from '../assets/imgs/logo2.webp';
@@ -72,6 +73,8 @@ const Register = () => {
         // const response = await axios.post('http://localhost:3000/api/v1/students', values);
         console.log('Server response:', response);
         resetForm();
+        sendEmail(response.data);
+        
         navigate('/confirmation');
       } catch (error) {
         console.error('Error submitting form:', error);
@@ -79,6 +82,28 @@ const Register = () => {
     },
   });
 
+  const sendEmail = (data: { studentNameE: string; email: string; motherPhoneNo: string }) => {
+    const templateParams = {
+      studentName: data.studentNameE,
+      phoneNumber: data.motherPhoneNo,
+      email: data.email,
+    };
+    console.log('Template Params:', templateParams);
+
+    emailjs.send(
+      'service_8pcdjyn',
+      'template_kzyk8xq',
+      templateParams,
+      'HA2UPktyOeaIsgP6s'
+    )
+    .then((result) => {
+      console.log('Email successfully sent!', result.status, result.text);
+    })
+    .catch((error) => {
+      console.error('Failed to send email.', error);
+      alert('There was an error sending the email.');
+    });
+  };
   const handleRadioChange = (e:any) => {
     if (e.target.value === 'Other') {
       setIsOtherSelected(true);
