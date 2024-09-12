@@ -19,8 +19,6 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
     arrows: true,
    
   };
-
-
   return (
     <Box
       w={{ base: "100%", md: "80%", lg: "80%" }} 
