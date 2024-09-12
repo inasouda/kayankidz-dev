@@ -31,7 +31,6 @@ const ContactUs: React.FC = () => {
         mx="auto"
         maxW="container.md"
       >
-        {/* Email */}
         <Flex direction="row" align="center" w="full" maxW="300px">
           <Icon as={EmailIcon} w={8} h={8} color="teal.500" mr={4} />
           <FormControl id="email">
@@ -46,8 +45,6 @@ const ContactUs: React.FC = () => {
             </a>
           </FormControl>
         </Flex>
-
-        {/* Phone */}
         <Flex direction="row" align="center" w="full" maxW="300px">
           <Icon as={PhoneIcon} w={8} h={8} color="teal.500" mr={4} />
           <FormControl id="phone">
@@ -63,8 +60,8 @@ const ContactUs: React.FC = () => {
           </FormControl>
         </Flex>
 
-        {/* Location */}
-        <Flex direction="row" align="center" w="full" maxW="300px">
+        {/* Location .. do it later */}
+        {/* <Flex direction="row" align="center" w="full" maxW="300px">
           <Icon as={FontAwesomeIcon} icon={faMapMarkerAlt} w={8} h={8} color="teal.500" mr={4} />
           <FormControl id="location">
             <FormLabel display="none">Location</FormLabel>
@@ -81,7 +78,7 @@ const ContactUs: React.FC = () => {
               </FormLabel>
             </a>
           </FormControl>
-        </Flex>
+        </Flex> */}
       </Flex>
       
     </Box>

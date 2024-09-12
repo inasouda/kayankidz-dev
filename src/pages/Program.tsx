@@ -26,6 +26,8 @@ const Program: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
+    centerMode: true,  
+    centerPadding: '0', 
    
   };
   const araImgs = [arImg1,arImg2,arImg0,arImg3,arImg4,arImg5,arImg6];
@@ -38,10 +40,11 @@ const Program: React.FC = () => {
       w={{ base: "100%", md: "80%", lg: "100%" }} 
       mx="auto" 
       mt={'2rem'}
-      p="0.5rem"
+      p="0.7rem"
       color="black"
       shadow="md"
       textAlign="center"
+      overflow="hidden" 
     >
 
       {/* <Image
@@ -121,9 +124,9 @@ const Program: React.FC = () => {
       </List>
 
       <Box
-         width="100%" display={{base:"block",md:"block", lg: "flex"}}  justifyContent= "center" mx="auto" gap={'7rem'}  
+        display={{base:"block",md:"block", lg: "flex"}} alignItems={'center'} justifyContent= "center" mx="auto" gap={'7rem'}  
       >
-        <Box width={{base:"100%", lg:"30em", md:"100%"}} mb={"1.5rem"}>
+        <Box width={{base:"100%", lg:"30em", md:"100%"}} mb={"2rem"}>
           <Slider {...settings}>
           {
             araImgs.map((img, index) => (
@@ -133,7 +136,7 @@ const Program: React.FC = () => {
                   alt='arabic image'
                   borderRadius="md"
                   width="100%"
-                  height="25rem"
+                  height={{base:"25rem", lg:"25rem", md:"35rem"}}
                   objectFit="cover"
                 />
                 <Text mt={2} fontSize="md">
@@ -145,7 +148,7 @@ const Program: React.FC = () => {
    
           </Slider>
         </Box>
-        <Box  width={{base:"100%", lg:"30em", md:"100%"}}>
+        <Box  width={{base:"100%", lg:"30em", md:"100%"}} mb={"2rem"}>
           <Slider {...settings}>
             {
               islamicImgs.map(img =>(<Box>
@@ -154,7 +157,7 @@ const Program: React.FC = () => {
                   alt="Islamic Study"
                   borderRadius="md"
                   width="100%"
-                  height={'25rem'}
+                  height={{base:"25rem", lg:"25rem", md:"35rem"}}
                   objectFit="cover"
                 />
                 <Text mt={2} fontSize="md">
