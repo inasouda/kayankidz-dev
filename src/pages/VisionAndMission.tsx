@@ -18,7 +18,7 @@ const Vision = () => (
             Our Vision
         </Text>
         <Text fontSize="md" lineHeight="taller">
-          We strive to instill strong Islamic values and guide *our children* toward embodying the teachings of the Quran in all aspects of their character. Our goal is to raise Muslim children who thoroughly understand the Arabic language and the Quran, empowering them to apply these principles in their daily lives.
+          We strive to instill strong Islamic values and guide <strong>our children</strong> toward embodying the teachings of the Quran in all aspects of their character. Our goal is to raise Muslim children who thoroughly understand the Arabic language and the Quran, empowering them to apply these principles in their daily lives.
         </Text>
    
     </Box>

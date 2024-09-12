@@ -3,7 +3,7 @@ import { Box, Text, Image, List, ListItem, ListIcon, HStack } from '@chakra-ui/r
 import { FaBook } from 'react-icons/fa';
 import Slider from 'react-slick';
 
-import kayanProgram from '../assets/imgs/kayanProgram.webp';
+// import kayanProgram from '../assets/imgs/kayanProgram.webp';
 
 import isImg1 from '../assets/imgs/islamic.webp';
 import isImg2 from '../assets/imgs/isImg2.webp';
@@ -44,14 +44,14 @@ const Program: React.FC = () => {
       textAlign="center"
     >
 
-      <Image
+      {/* <Image
         src={kayanProgram}
         alt="kayanProgram"
         mx="auto"
         width ={{base:'100%', lg:"50vw"}}
         display="block"
         mb="2rem"
-      />
+      /> */}
 
       <Text fontSize="xl" textAlign="center" fontWeight="bold">
         Our Program
@@ -137,7 +137,7 @@ const Program: React.FC = () => {
                   objectFit="cover"
                 />
                 <Text mt={2} fontSize="md">
-                  Arabic Study 
+                  Arabic Program 
                 </Text>
               </Box>
             ))
@@ -158,7 +158,7 @@ const Program: React.FC = () => {
                   objectFit="cover"
                 />
                 <Text mt={2} fontSize="md">
-                  Islamic Study 
+                  Quran and Islamic Program 
                 </Text>
               </Box>))
             }

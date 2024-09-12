@@ -73,6 +73,8 @@ const Register = () => {
         // const response = await axios.post('http://localhost:3000/api/v1/students', values);
         console.log('Server response:', response);
         resetForm();
+        // do it later 
+        // sendToExcel(values);
         sendEmail(response.data);
         
         navigate('/confirmation');
@@ -81,6 +83,20 @@ const Register = () => {
       }
     },
   });
+
+  // do it later
+  const  sendToExcel =  async (data:{}) =>{
+    // https://docs.google.com/spreadsheets/d/1WK0oVg5fP8RmSOvxIoZQj_hXzWFilDjTIRvLJHTJGcw/edit?usp=sharing
+    const googleSheetsUrl = 'https://docs.google.com/spreadsheets/d/1WK0oVg5fP8RmSOvxIoZQj_hXzWFilDjTIRvLJHTJGcw/edit?usp=sharing';
+      // Save data to Google Sheets
+      try{
+      await axios.post(googleSheetsUrl, data);
+      }
+      catch (error) {
+        console.error('Error submitting data:', error);
+        alert('An error occurred.');
+      }
+  }
 
   const sendEmail = (data: { studentNameE: string; email: string; motherPhoneNo: string }) => {
     const templateParams = {
