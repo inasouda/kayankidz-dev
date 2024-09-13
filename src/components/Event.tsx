@@ -16,6 +16,7 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,  
     arrows: true,
    
   };

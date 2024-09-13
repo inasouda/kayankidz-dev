@@ -28,7 +28,7 @@ const Program: React.FC = () => {
     arrows: true,
     centerMode: true,  
     centerPadding: '0', 
-   
+    autoplay: true,  
   };
   const araImgs = [arImg1,arImg2,arImg0,arImg3,arImg4,arImg5,arImg6];
   const islamicImgs = [isImg1,isImg2,isImg3,isImg4,isImg5];
