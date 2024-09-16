@@ -1,18 +1,72 @@
-import  { useState } from 'react';
+import  { useState} from 'react';
 import { useFormik } from 'formik';
 import {  useNavigate } from 'react-router-dom';
 
 import * as Yup from 'yup';
 import axios from 'axios';
-import emailjs from 'emailjs-com';
+// import emailjs from 'emailjs-com';
 import styled from 'styled-components';
-import { FormLabel } from 'react-bootstrap';
+import {  FormLabel } from 'react-bootstrap';
 import logo from '../assets/imgs/logo2.webp';
 
 const Register = () => {
   const [step, setStep] = useState(1);
   const [isOtherSelected, setIsOtherSelected] = useState(false);
+  const [isNextClicked, setIsNextClicked] = useState(false);
+
   const navigate = useNavigate()
+  // Step 1 Schema
+  const step1Schema =  Yup.object({
+    studentNameA: Yup.string().required('Required'),
+    studentNameE: Yup.string().required('Required'),
+    dob: Yup.date().required('Required'),
+    gender: Yup.string().required('Required'),
+    originCountry: Yup.string().required('Required'),
+    mainLang: Yup.string().required('Required'),
+    schoolName: Yup.string().required('Required'),
+    grade: Yup.string().required('Required'),
+  });
+  // Step 2 Schema
+  const step2Schema = Yup.object({
+    motherNm: Yup.string().required('Required'),
+    motherPhoneNo: Yup.string().required('Required'),
+    motherWANm: Yup.string().required('Required'),
+    fatherNm: Yup.string().required('Required'),
+    fatherPhoneNo: Yup.string().required('Required'),
+    fatherWANm: Yup.string().required('Required'),
+    email: Yup.string().email('Invalid email address').required('Required'),
+    address: Yup.string().required('Required'),
+    postalCode: Yup.string().required('Required'),
+
+  });
+
+// Step 3 Schema
+  const step3Schema = Yup.object({
+    emergencyContact: Yup.string().required('Required'),
+    prevKayanStd: Yup.string().required('Required'),
+    prevArabicSchoolStd: Yup.string().required('Required'),
+    knowUs:Yup.string().required('Required'),
+  });
+
+  const step4Schema = Yup.object({
+    acceptTerms: Yup.boolean().oneOf([true], 'You must accept the terms and conditions').required('Required'),
+  }); 
+
+  const validationSchema = () => {
+    switch (step) {
+      case 1:
+        return step1Schema;
+      case 2:
+        return step2Schema;
+      case 3:
+        return step3Schema;
+      case 4:
+        return step4Schema;
+      default:
+        return Yup.object(); 
+    }
+  };
+  
   const formik = useFormik({
     initialValues: {
       studentNameA: '',
@@ -38,29 +92,8 @@ const Register = () => {
       knowUs:'',
       acceptTerms:false,
     },
-    validationSchema: Yup.object({
-      studentNameA: Yup.string().required('Required'),
-      studentNameE: Yup.string().required('Required'),
-      dob: Yup.date().required('Required'),
-      gender: Yup.string().required('Required'),
-      originCountry: Yup.string().required('Required'),
-      mainLang: Yup.string().required('Required'),
-      schoolName: Yup.string().required('Required'),
-      grade: Yup.string().required('Required'),
-      motherNm: Yup.string().required('Required'),
-      motherPhoneNo: Yup.string().required('Required'),
-      motherWANm: Yup.string().required('Required'),
-      fatherNm: Yup.string().required('Required'),
-      fatherPhoneNo: Yup.string().required('Required'),
-      fatherWANm: Yup.string().required('Required'),
-      address: Yup.string().required('Required'),
-      postalCode: Yup.string().required('Required'),
-      email: Yup.string().email('Invalid email address').required('Required'),
-      emergencyContact:Yup.string().required('Required'),
-      prevKayanStd:Yup.string().required('Required'),
-      acceptTerms: Yup.boolean().oneOf([true], 'You must accept the terms and conditions').required('Required'), 
-
-    }),
+    validationSchema:validationSchema()
+    ,
     
     onSubmit: async (values, { resetForm }) => {
       try {
@@ -75,7 +108,7 @@ const Register = () => {
         resetForm();
         // do it later 
         // sendToExcel(values);
-        sendEmail(response.data);
+        // sendEmail(response.data);
         
         navigate('/confirmation');
       } catch (error) {
@@ -98,28 +131,29 @@ const Register = () => {
   //     }
   // }
 
-  const sendEmail = (data: { studentNameE: string; email: string; motherPhoneNo: string }) => {
-    const templateParams = {
-      studentName: data.studentNameE,
-      phoneNumber: data.motherPhoneNo,
-      email: data.email,
-    };
-    console.log('Template Params:', templateParams);
+  // const sendEmail = (data: { studentNameE: string; email: string; motherPhoneNo: string }) => {
+  //   const templateParams = {
+  //     studentName: data.studentNameE,
+  //     phoneNumber: data.motherPhoneNo,
+  //     email: data.email,
+  //   };
+  //   console.log('Template Params:', templateParams);
 
-    emailjs.send(
-      'service_8pcdjyn',
-      'template_kzyk8xq',
-      templateParams,
-      'HA2UPktyOeaIsgP6s'
-    )
-    .then((result) => {
-      console.log('Email successfully sent!', result.status, result.text);
-    })
-    .catch((error) => {
-      console.error('Failed to send email.', error);
-      alert('There was an error sending the email.');
-    });
-  };
+  //   emailjs.send(
+  //     'service_8pcdjyn',
+  //     'template_kzyk8xq',
+  //     templateParams,
+  //     'HA2UPktyOeaIsgP6s'
+  //   )
+  //   .then((result) => {
+  //     console.log('Email successfully sent!', result.status, result.text);
+  //   })
+  //   .catch((error) => {
+  //     console.error('Failed to send email.', error);
+  //     alert('There was an error sending the email.');
+  //   });
+  // };
+
   const handleRadioChange = (e:any) => {
     if (e.target.value === 'Other') {
       setIsOtherSelected(true);
@@ -133,8 +167,30 @@ const Register = () => {
   const handleOtherLangChange = (e:any) => {
     formik.setFieldValue('mainLang', e.target.value);
   };
+  
 
-  const handleNext = () => setStep(step + 1);
+  const handleNext = async () => {
+    // Get the validation schema for the current step
+    const schema = validationSchema();
+    
+    try {
+      // Validate the current values
+      await schema.validate(formik.values, { abortEarly: false });
+      
+      // If validation passes, move to the next step
+      setStep((prevStep) => prevStep + 1);
+    } catch (error:any) {
+      // If validation fails, extract errors and set them in Formik
+      const validationErrors = error.inner.reduce((acc:any, error:any) => {
+        acc[error.path] = error.message;
+        return acc;
+      }, {});
+      setIsNextClicked(true)
+      formik.setErrors(validationErrors); // Set errors in Formik to show on the form
+    }
+  };
+  
+
   const handleBack = () => setStep(step - 1);
 
   return (
@@ -160,6 +216,7 @@ const Register = () => {
                         value={formik.values.studentNameA}
                         placeholder='Please enter Student Name in Arabic'
                         />
+
                         {formik.touched.studentNameA && formik.errors.studentNameA && (
                         <ErrorMessage>{formik.errors.studentNameA}</ErrorMessage>
                         )}
@@ -176,7 +233,8 @@ const Register = () => {
                         placeholder='Please enter Student Name in English'
 
                         />
-                        {formik.touched.studentNameE && formik.errors.studentNameE && (
+                       
+                        {(isNextClicked || formik.touched.studentNameE) && formik.errors.studentNameE && (
                         <ErrorMessage>{formik.errors.studentNameE}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -191,7 +249,7 @@ const Register = () => {
                         onBlur={formik.handleBlur}
                         value={formik.values.dob}
                         />
-                        {formik.touched.dob && formik.errors.dob && (
+                        {(isNextClicked ||formik.touched.dob) && formik.errors.dob && (
                         <ErrorMessage>{formik.errors.dob}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -207,7 +265,7 @@ const Register = () => {
                         placeholder='Please enter Child Country of Origin'
 
                         />
-                        {formik.touched.originCountry && formik.errors.originCountry && (
+                        { (isNextClicked || formik.touched.originCountry) && formik.errors.originCountry && (
                         <ErrorMessage>{formik.errors.originCountry}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -239,7 +297,7 @@ const Register = () => {
                             <FormLabel>Female</FormLabel> 
                         </RadioElement>
                         </RadioGroup>
-                        {formik.touched.gender && formik.errors.gender && (
+                        {(isNextClicked || formik.touched.gender) && formik.errors.gender && (
                         <ErrorMessage>{formik.errors.gender}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -306,7 +364,7 @@ const Register = () => {
                     )}
                         </RadioElement>
                         </RadioGroup>
-                        {formik.touched.mainLang && formik.errors.mainLang && (
+                        {(isNextClicked || formik.touched.mainLang) && formik.errors.mainLang && (
                         <ErrorMessage>{formik.errors.mainLang}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -322,7 +380,7 @@ const Register = () => {
                         value={formik.values.schoolName}
                         placeholder='Please enter School Name'
                         />
-                        {formik.touched.schoolName && formik.errors.schoolName && (
+                        {(isNextClicked || formik.touched.schoolName) && formik.errors.schoolName && (
                         <ErrorMessage>{formik.errors.schoolName}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -341,7 +399,7 @@ const Register = () => {
                             <option key={i} value={`Grade ${i + 1}`} label={`Grade ${i + 1}`} />
                         ))}
                         </Input>
-                        {formik.touched.grade && formik.errors.grade && (
+                        {(isNextClicked || formik.touched.grade) && formik.errors.grade && (
                         <ErrorMessage>{formik.errors.grade}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -363,7 +421,7 @@ const Register = () => {
                         value={formik.values.motherNm}
                         placeholder='Please enter Mother Name'
                         />
-                        {formik.touched.motherNm && formik.errors.motherNm && (
+                        {(isNextClicked || formik.touched.motherNm) && formik.errors.motherNm && (
                         <ErrorMessage>{formik.errors.motherNm}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -378,7 +436,7 @@ const Register = () => {
                         value={formik.values.motherPhoneNo}
                         placeholder='Please enter  Mother Phone Number '
                         />
-                        {formik.touched.motherPhoneNo && formik.errors.motherPhoneNo && (
+                        {(isNextClicked || formik.touched.motherPhoneNo) && formik.errors.motherPhoneNo && (
                         <ErrorMessage>{formik.errors.motherPhoneNo}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -394,7 +452,7 @@ const Register = () => {
                         placeholder='Please enter  Mother Whats app Number '
 
                         />
-                        {formik.touched.motherWANm && formik.errors.motherWANm && (
+                        {(isNextClicked || formik.touched.motherWANm) && formik.errors.motherWANm && (
                         <ErrorMessage>{formik.errors.motherWANm}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -410,7 +468,7 @@ const Register = () => {
                         value={formik.values.fatherNm}
                         placeholder='Please enter Father Name'
                         />
-                        {formik.touched.fatherNm && formik.errors.fatherNm && (
+                        {(isNextClicked || formik.touched.fatherNm )&& formik.errors.fatherNm && (
                         <ErrorMessage>{formik.errors.motherNm}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -426,7 +484,7 @@ const Register = () => {
                         placeholder='Please enter Father phone Number'
 
                         />
-                        {formik.touched.fatherPhoneNo && formik.errors.fatherPhoneNo && (
+                        {(isNextClicked ||formik.touched.fatherPhoneNo) && formik.errors.fatherPhoneNo && (
                         <ErrorMessage>{formik.errors.fatherPhoneNo}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -442,7 +500,7 @@ const Register = () => {
                         placeholder='Please enter Father Whats app Number'
 
                         />
-                        {formik.touched.fatherWANm && formik.errors.fatherWANm && (
+                        {(isNextClicked ||formik.touched.fatherWANm) && formik.errors.fatherWANm && (
                         <ErrorMessage>{formik.errors.fatherWANm}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -459,7 +517,7 @@ const Register = () => {
                         placeholder='Please enter Contact Email Address'
 
                         />
-                        {formik.touched.email && formik.errors.email && (
+                        {(isNextClicked ||formik.touched.email) && formik.errors.email && (
                         <ErrorMessage>{formik.errors.email}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -474,7 +532,7 @@ const Register = () => {
                         value={formik.values.address}
                         placeholder='Please enter Home Address'
                         />
-                        {formik.touched.address && formik.errors.address && (
+                        {(isNextClicked ||formik.touched.address) && formik.errors.address && (
                         <ErrorMessage>{formik.errors.address}</ErrorMessage>
                         )}
                     </FormGroup>
@@ -489,7 +547,7 @@ const Register = () => {
                         value={formik.values.postalCode}
                         placeholder='Please enter Postal Code'
                         />
-                        {formik.touched.postalCode && formik.errors.postalCode && (
+                        {(isNextClicked ||formik.touched.postalCode) && formik.errors.postalCode && (
                         <ErrorMessage>{formik.errors.postalCode}</ErrorMessage>
                         )}
                         
@@ -513,7 +571,7 @@ const Register = () => {
                                 value={formik.values.emergencyContact}
                                 placeholder='Please enter Emergency Contact'
                                 />
-                                {formik.touched.emergencyContact && formik.errors.emergencyContact && (
+                                {(isNextClicked ||formik.touched.emergencyContact) && formik.errors.emergencyContact && (
                                 <ErrorMessage>{formik.errors.emergencyContact}</ErrorMessage>
                                 )}
                             </FormGroup>
@@ -545,7 +603,7 @@ const Register = () => {
                                     <FormLabel>No</FormLabel> 
                                 </RadioElement>
                                 </RadioGroup>
-                                {formik.touched.prevKayanStd && formik.errors.prevKayanStd && (
+                                {(isNextClicked ||formik.touched.prevKayanStd) && formik.errors.prevKayanStd && (
                                 <ErrorMessage>{formik.errors.prevKayanStd}</ErrorMessage>
                                 )}
                             </FormGroup>
@@ -578,7 +636,7 @@ const Register = () => {
                                     <FormLabel>No</FormLabel> 
                                 </RadioElement>
                                 </RadioGroup>
-                                {formik.touched.prevArabicSchoolStd && formik.errors.prevArabicSchoolStd && (
+                                {(isNextClicked ||formik.touched.prevArabicSchoolStd) && formik.errors.prevArabicSchoolStd && (
                                 <ErrorMessage>{formik.errors.prevArabicSchoolStd}</ErrorMessage>
                                 )}
                             </FormGroup>
@@ -593,7 +651,7 @@ const Register = () => {
                                 value={formik.values.knowUs}
                                 placeholder='Please enter How do you know us?'
                                 />
-                                {formik.touched.knowUs && formik.errors.knowUs && (
+                                {(isNextClicked || formik.touched.knowUs)&& formik.errors.knowUs && (
                                 <ErrorMessage>{formik.errors.knowUs}</ErrorMessage>
                                 )}
                             </FormGroup>
@@ -645,7 +703,7 @@ const Register = () => {
                             </Label>
             
                 </CheckboxGroup>
-                {formik.touched.acceptTerms && formik.errors.acceptTerms && (
+                {(isNextClicked ||formik.touched.acceptTerms) && formik.errors.acceptTerms && (
                 <ErrorMessage>{formik.errors.acceptTerms}</ErrorMessage>
                 )}
             </FormGroup>
