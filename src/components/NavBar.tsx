@@ -36,7 +36,7 @@ return (
         <Container maxW="container.xl" h={"5rem"}>
         <Flex justifyContent="space-between" h="20" alignItems="center">
             <Image src={logo} maxH="4.5rem" alt="Logo" />
-            <HStack spacing={4} display={{ base: "none", md: "flex" }}>
+            <HStack spacing={4} display={{ base: "none", md: "none", lg:'flex'}}>
                 <LinkBtn text="Home" route='/' onClose={onClose}/>
                 <LinkBtn text="Our Vision"  route='#visionAndMission' onClose={onClose}/>
                 <LinkBtn text="About Us"  route='/#about-us' onClose={onClose}/>
@@ -50,7 +50,7 @@ return (
             aria-label="Open menu"
             icon={isOpen ? <FaTimes  style={{ transform: 'scale(1.4)' }}/> : <FaBars style={{ transform: 'scale(1.4)' }} />}
            
-            display={{ base: "flex", md: "none" }}
+            display={{ base: "flex", md: "flex", lg:"none" }}
             onClick={toggleDrawer} 
             color="teal"
             variant="unstyled"

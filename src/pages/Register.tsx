@@ -170,23 +170,18 @@ const Register = () => {
   
 
   const handleNext = async () => {
-    // Get the validation schema for the current step
     const schema = validationSchema();
     
     try {
-      // Validate the current values
-      await schema.validate(formik.values, { abortEarly: false });
-      
-      // If validation passes, move to the next step
-      setStep((prevStep) => prevStep + 1);
+        await schema.validate(formik.values, { abortEarly: false });
+        setStep((prevStep) => prevStep + 1);
     } catch (error:any) {
-      // If validation fails, extract errors and set them in Formik
       const validationErrors = error.inner.reduce((acc:any, error:any) => {
         acc[error.path] = error.message;
         return acc;
       }, {});
       setIsNextClicked(true)
-      formik.setErrors(validationErrors); // Set errors in Formik to show on the form
+      formik.setErrors(validationErrors);
     }
   };
   
