@@ -3,8 +3,6 @@ import { Box, Text, Image, List, ListItem, ListIcon, HStack } from '@chakra-ui/r
 import { FaBook } from 'react-icons/fa';
 import Slider from 'react-slick';
 
-// import kayanProgram from '../assets/imgs/kayanProgram.webp';
-
 import isImg1 from '../assets/imgs/islamic.webp';
 import isImg2 from '../assets/imgs/isImg2.webp';
 import isImg3 from '../assets/imgs/isImg3.webp';

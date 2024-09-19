@@ -1,7 +1,5 @@
 import { Box, Flex, FormControl, FormLabel, Icon, Heading } from "@chakra-ui/react";
 import { EmailIcon, PhoneIcon } from "@chakra-ui/icons";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const ContactUs: React.FC = () => {
   return (
@@ -59,26 +57,6 @@ const ContactUs: React.FC = () => {
             </a>
           </FormControl>
         </Flex>
-
-        {/* Location .. do it later */}
-        {/* <Flex direction="row" align="center" w="full" maxW="300px">
-          <Icon as={FontAwesomeIcon} icon={faMapMarkerAlt} w={8} h={8} color="teal.500" mr={4} />
-          <FormControl id="location">
-            <FormLabel display="none">Location</FormLabel>
-            <a 
-              href="https://www.google.com/maps?q=Zebra+Academy,+Mohageny,+Calgary,+AB,+Canada"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FormLabel 
-                textAlign="center"
-                cursor="pointer"
-              >
-                Zebra Academy, Mohageny, Calgary, AB, Canada
-              </FormLabel>
-            </a>
-          </FormControl>
-        </Flex> */}
       </Flex>
       
     </Box>

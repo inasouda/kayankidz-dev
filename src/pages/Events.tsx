@@ -1,4 +1,3 @@
-// EventsPage.jsx
 import { VStack, Heading } from "@chakra-ui/react";
 import Event from "../components/Event"; 
 import ramadan1 from "../assets/imgs/ramadan.webp";

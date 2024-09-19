@@ -1,5 +1,4 @@
 import { Button, chakra } from '@chakra-ui/react';
-// import { CheckIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 
 const ChakraButton = chakra(Button, {
@@ -37,7 +36,6 @@ const RegisterButton = () => {
   };
 
   return (
-    // <ChakraButton onClick={handleRegisterClick} rightIcon={<CheckIcon />}>
     <ChakraButton fontWeight={'bold'} fontSize={'1.2rem'} width={'10rem'} borderRadius={'3rem'} onClick={handleRegisterClick}>
       Register
     </ChakraButton>
