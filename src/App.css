@@ -1,3 +1,6 @@
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
-
+.slider-container{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}

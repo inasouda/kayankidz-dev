@@ -7,9 +7,10 @@ interface EventProps {
   description: string;
   images: string[];
   bgcolor: string;
+  headerImg:string;
 }
 
-const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) => {
+const Event: React.FC<EventProps> = ({ title, description, images, bgcolor, headerImg }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -18,7 +19,6 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
     slidesToScroll: 1,
     autoplay: true,  
     arrows: true,
-   
   };
   return (
     <Box
@@ -41,23 +41,30 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
             textAlign={{ base: "center", lg: "left" }} 
             p={4}
           >
-            <Text  fontSize="xl" fontWeight={'bold'} mb={4}>
+            <Text  fontSize="xl" fontWeight={'bold'} mb={7}>
               {title}
             </Text>
-            <Text fontSize="md" mb={4}>
-              {description}
+            <Image src={headerImg}
+                height={'15rem'}
+                width={'100%'}
+                objectFit={'cover'}
+                mb={7}
+                borderRadius={'1.5rem'}
+              />
+            <Text fontSize="md">
+                {description}
             </Text>
           </Box>
           <Box
             flex="1"
-            w={{ base: "full", lg: "50%" }}
+            w={{ base: "100%", lg: "50%" }}
             p={4}
             maxH="31.25rem" 
             overflowY="auto"
-            bgColor="#F0F0F0"
-            borderRadius="md"
-            border="1px solid #ccc" 
-            boxShadow="md"
+            bgColor={bgcolor}
+            // borderRadius="md"
+            // border="1px solid #ccc" 
+            // boxShadow="md"
             position="relative" 
           >
             <Box
@@ -72,8 +79,8 @@ const Event: React.FC<EventProps> = ({ title, description, images, bgcolor }) =>
               justifyContent={'center'}
               alignItems={'center'}
             />
-            <Box mb={"1.5rem"}>
-              <Slider {...settings}>
+            <Box className='slider-container' >
+              <Slider  {...settings} > 
                 {
                   images.map((img, index) => (
                     <Box key={index}>
