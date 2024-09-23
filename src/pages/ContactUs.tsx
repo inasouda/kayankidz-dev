@@ -1,4 +1,4 @@
-import { Box, Flex, FormControl, FormLabel, Icon, Heading, Image } from "@chakra-ui/react";
+import {  Flex, FormControl, FormLabel, Icon, Heading, Image } from "@chakra-ui/react";
 import { EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 import aboutus from '../assets/imgs/startKayanLogo.webp';
 
