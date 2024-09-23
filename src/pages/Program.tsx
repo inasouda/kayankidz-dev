@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Image, List, ListItem, ListIcon, HStack } from '@chakra-ui/react';
+import { Box, Text, Image, List, ListItem, ListIcon, HStack, Flex } from '@chakra-ui/react';
 import { FaBook } from 'react-icons/fa';
 import Slider from 'react-slick';
 import programImg from '../assets/imgs/programImg.webp';
@@ -42,7 +42,7 @@ const Program: React.FC = () => {
       mt={'2rem'}
       p="0.7rem"
       color="black"
-      shadow="md"
+      // shadow="md"
       textAlign="center"
       overflow="hidden" 
     >
@@ -84,6 +84,28 @@ const Program: React.FC = () => {
             <Text>The Tafsir sessions offer in-depth explanations of the Quranic verses in an interactive and engaging manner, tailored to match the children's age, ensuring they understand the lessons and can apply them in their daily lives.</Text>
           </HStack>
         </ListItem>
+        <Box 
+          width={{base:"100%", lg:"100%", md:"100%"}}
+          height={{base:"100%", lg:"150%", md:"100%"}}
+          mb={"2rem"}>
+          <Slider {...settings}>
+            {
+              islamicImgs.map(img =>(<Box>
+                <Image
+                  src={img}
+                  alt="Islamic Study"
+                  borderRadius="md"
+                  width="100%"
+                  height={{base:"25rem", lg:"25rem", md:"35rem"}}
+                  objectFit="cover"
+                />
+                <Text mt={2} fontSize="md" textAlign={'center'}>
+                  Quran and Islamic Program 
+                </Text>
+              </Box>))
+            }
+          </Slider>
+        </Box>
         <ListItem>
           <HStack align="start">
             <ListIcon as={FaBook} color="teal.500" />
@@ -120,54 +142,37 @@ const Program: React.FC = () => {
             <Text>The program aims to create a supportive and stimulating environment.</Text>
           </HStack>
         </ListItem>
+        <ListItem>
+          <Box width={{base:"100%", lg:"100%", md:"100%"}} mb={"2rem"}>
+            <Slider {...settings}>
+            {
+              araImgs.map((img, index) => (
+                <Box key={index}>
+                  <Image
+                    src={img}
+                    alt='arabic image'
+                    borderRadius="md"
+                    width="100%"
+                    height={{base:"25rem", lg:"25rem", md:"35rem"}}
+                    objectFit="cover"
+                  />
+                  <Text mt={2} fontSize="md" textAlign={'center'}>
+                    Arabic Program 
+                  </Text>
+                </Box>
+              ))
+            }
+    
+            </Slider>
+          </Box>
+        </ListItem>
       </List>
 
-      <Box
-        display={{base:"block",md:"block", lg: "flex"}} alignItems={'center'} justifyContent= "center" mx="auto" gap={'7rem'}  
-      >
-        <Box width={{base:"100%", lg:"30em", md:"100%"}} mb={"2rem"}>
-          <Slider {...settings}>
-          {
-            araImgs.map((img, index) => (
-              <Box key={index}>
-                <Image
-                  src={img}
-                  alt='arabic image'
-                  borderRadius="md"
-                  width="100%"
-                  height={{base:"25rem", lg:"25rem", md:"35rem"}}
-                  objectFit="cover"
-                />
-                <Text mt={2} fontSize="md">
-                  Arabic Program 
-                </Text>
-              </Box>
-            ))
-          }
-   
-          </Slider>
-        </Box>
-        <Box  width={{base:"100%", lg:"30em", md:"100%"}} mb={"2rem"}>
-          <Slider {...settings}>
-            {
-              islamicImgs.map(img =>(<Box>
-                <Image
-                  src={img}
-                  alt="Islamic Study"
-                  borderRadius="md"
-                  width="100%"
-                  height={{base:"25rem", lg:"25rem", md:"35rem"}}
-                  objectFit="cover"
-                />
-                <Text mt={2} fontSize="md">
-                  Quran and Islamic Program 
-                </Text>
-              </Box>))
-            }
-          </Slider>
-        </Box>
-        
-      </Box> 
+      <Flex justifyContent={'center'} >
+
+        <Box width={'80%'}  borderBottom={'0.01rem solid black'}/>
+     
+      </Flex>
     </Box>
   );
 };
