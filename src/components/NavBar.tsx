@@ -41,6 +41,8 @@ return (
                 <LinkBtn text="Our Vision"  route='#visionAndMission' onClose={onClose}/>
                 <LinkBtn text="About Us"  route='/#about-us' onClose={onClose}/>
                 <LinkBtn text="Kayan Program"  route='#kayan-program' onClose={onClose}/>
+                <LinkBtn text="Kayan Library"  route='#kayan-library' onClose={onClose}/>
+
                 <LinkBtn text="Events"  route='#events' onClose={onClose}/>
                 <LinkBtn text="Contact Us"  route='/#contact-us' onClose={onClose}/>
                 {/* <LinkBtn text="Students"  route='/students' onClose={onClose}/> */}
@@ -81,6 +83,7 @@ return (
                 <LinkBtn text='Our Vision' route='#visionAndMission'  bgColor='orange.100' onClose={onClose}></LinkBtn>
                 <LinkBtn text='About Us' route='#about-us' bgColor='orange.100' onClose={onClose}></LinkBtn>
                 <LinkBtn text='Kayan Program' route='#kayan-program' bgColor='orange.100' onClose={onClose}></LinkBtn>
+                <LinkBtn text='Kayan Library' route='#kayan-library' bgColor='orange.100' onClose={onClose}></LinkBtn>
                 <LinkBtn text='Events' route='#events' bgColor='orange.100' onClose={onClose}></LinkBtn>
                 <LinkBtn text='Contact Us' route='#contact-us' bgColor='orange.100' onClose={onClose}></LinkBtn>
                 {/* <LinkBtn text="Students"  route='/students' onClose={onClose}/> */}

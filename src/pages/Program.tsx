@@ -169,9 +169,7 @@ const Program: React.FC = () => {
       </List>
 
       <Flex justifyContent={'center'} >
-
         <Box width={'80%'}  borderBottom={'0.01rem solid black'}/>
-     
       </Flex>
     </Box>
   );

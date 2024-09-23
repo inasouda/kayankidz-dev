@@ -6,6 +6,7 @@ import ContactUs from "./pages/ContactUs"
 import Events from "./pages/Events"
 import VisionAndMission from "./pages/VisionAndMission"
 import Program from './pages/Program';
+import Library from './pages/Library';
 
 export const Home = () => {
   return (
@@ -14,6 +15,7 @@ export const Home = () => {
        <VisionAndMission/>
        <AboutUs />
        <Program/>
+       <Library/>
        <Events/>
        <ContactUs/>
        <Footer />
