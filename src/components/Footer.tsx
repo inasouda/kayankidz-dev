@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
       borderTop="1px"
       borderColor={useColorModeValue("gray.300", "gray.600")}
     >
+       
       <Text fontSize="sm" color={useColorModeValue("gray.600", "gray.400")}>
         &copy; {new Date().getFullYear()} Kayan Kidz. All rights reserved.
       </Text>

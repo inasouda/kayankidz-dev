@@ -1,65 +1,79 @@
-import { Box, Flex, FormControl, FormLabel, Icon, Heading } from "@chakra-ui/react";
+import { Box, Flex, FormControl, FormLabel, Icon, Heading, Image } from "@chakra-ui/react";
 import { EmailIcon, PhoneIcon } from "@chakra-ui/icons";
+import aboutus from '../assets/imgs/startKayanLogo.webp';
 
 const ContactUs: React.FC = () => {
   return (
-    <Box
+    <Flex
       id="contact-us"
       p="4"
       width="full"
       bgColor="gray.100"
       borderRadius="md"
-      boxShadow="md"
+      align="center"
+      justify="center"
     >
-      <Heading 
-        as="h2"
-        size="lg"
-        textAlign="center"
-        mb={8}
-      >
-        Contact Us
-      </Heading>
-
       <Flex
-        direction="column"
+        direction="row"
         align="center"
-        justify="center"
-        gap={8}
-        wrap="wrap"
+        justify="space-between"
         mx="auto"
         maxW="container.md"
+        width="full"
       >
-        <Flex direction="row" align="center" w="full" maxW="300px">
-          <Icon as={EmailIcon} w={8} h={8} color="teal.500" mr={4} />
-          <FormControl id="email">
-            <FormLabel display="none">Contact Email</FormLabel>
-            <a href="mailto:kayankidz@gmail.com">
-              <FormLabel 
-                textAlign="center"
-                cursor="pointer"
-              >
-                kayankidz@gmail.com
-              </FormLabel>
-            </a>
-          </FormControl>
+        <Flex
+          direction="column"
+          gap={8}
+          align="flex-start"
+          maxW="300px"
+        >
+          <Heading 
+            as="h2"
+            size="lg"
+            textAlign="center"
+            mb={3}
+          >
+            Contact Us
+          </Heading>
+          <Flex direction="row" align="center" w="full">
+            <Icon as={EmailIcon} w={5} h={5} color="teal.500" mr={4} />
+            <FormControl id="email">
+              <FormLabel display="none">Contact Email</FormLabel>
+              <a href="mailto:kayankidz@gmail.com">
+                <FormLabel 
+                  textAlign="left"
+                  cursor="pointer"
+                >
+                  kayankidz@gmail.com
+                </FormLabel>
+              </a>
+            </FormControl>
+          </Flex>
+          <Flex direction="row" align="left" w="full">
+            <Icon as={PhoneIcon} w={5} h={5} color="teal.500" mr={4} />
+            <FormControl id="phone">
+              <FormLabel display="none">Phone Number</FormLabel>
+              <a href="tel:+15879681800">
+                <FormLabel 
+                  textAlign="left"
+                  cursor="pointer"
+                >
+                  +1 587 968 1800
+                </FormLabel>
+              </a>
+            </FormControl>
+          </Flex>
         </Flex>
-        <Flex direction="row" align="center" w="full" maxW="300px">
-          <Icon as={PhoneIcon} w={8} h={8} color="teal.500" mr={4} />
-          <FormControl id="phone">
-            <FormLabel display="none">Phone Number</FormLabel>
-            <a href="tel:+15879681800">
-              <FormLabel 
-                textAlign="center"
-                cursor="pointer"
-              >
-                +1 587 968 1800
-              </FormLabel>
-            </a>
-          </FormControl>
-        </Flex>
+
+        <Image
+          src={aboutus}
+          alt="About Us Image"
+          boxSize={{ base: "7rem", lg: "15rem" }}
+          ml={{ lg: 8 }}
+          mt={{base:20}}
+        />
       </Flex>
-      
-    </Box>
+    </Flex>
   );
 };
 
