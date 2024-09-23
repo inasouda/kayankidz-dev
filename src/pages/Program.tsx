@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Text, Image, List, ListItem, ListIcon, HStack } from '@chakra-ui/react';
 import { FaBook } from 'react-icons/fa';
 import Slider from 'react-slick';
+import programImg from '../assets/imgs/programImg.webp';
 
 import isImg1 from '../assets/imgs/islamic.webp';
 import isImg2 from '../assets/imgs/isImg2.webp';
@@ -15,6 +16,7 @@ import arImg3 from '../assets/imgs/arImg3.webp';
 import arImg4 from '../assets/imgs/arImg4.webp';
 import arImg5 from '../assets/imgs/arImg5.webp';
 import arImg6 from '../assets/imgs/arImg6.webp';
+
 
 const Program: React.FC = () => {
   const settings = {
@@ -44,15 +46,14 @@ const Program: React.FC = () => {
       textAlign="center"
       overflow="hidden" 
     >
+     <Image
+            src={programImg}
+            alt="About Us Image"
+            boxSize={{ base: "15rem", lg: "20rem" }}
+            mx="auto" 
+          />
 
-      {/* <Image
-        src={kayanProgram}
-        alt="kayanProgram"
-        mx="auto"
-        width ={{base:'100%', lg:"50vw"}}
-        display="block"
-        mb="2rem"
-      /> */}
+   
 
       <Text fontSize="xl" textAlign="center" fontWeight="bold">
         Our Program
