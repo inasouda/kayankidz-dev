@@ -777,7 +777,8 @@ const FormContainer = styled.div`
 
 const PageContainer = styled.div`
   // background-color: rgb(255, 219, 166);
-  background-color:rgb(200 230 204);
+  // background-color:rgb(200 230 204);
+  background-color:rgba(0, 0, 0, 0.06);
   padding: 2rem; 
   min-height: 100vh;
   margin-bottom:0rem;
