@@ -1,4 +1,4 @@
-import {  Flex, FormControl, FormLabel, Icon, Heading, Image } from "@chakra-ui/react";
+import {  Flex, FormLabel, Icon, Heading, Image, Box } from "@chakra-ui/react";
 import { EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 import aboutus from '../assets/imgs/startKayanLogo.webp';
 
@@ -37,7 +37,7 @@ const ContactUs: React.FC = () => {
           </Heading>
           <Flex direction="row" align="center" w="full">
             <Icon as={EmailIcon} w={5} h={5} color="teal.500" mr={4} />
-            <FormControl id="email">
+            <Box id="email">
               <FormLabel display="none">Contact Email</FormLabel>
               <a href="mailto:kayankidz@gmail.com">
                 <FormLabel 
@@ -47,11 +47,11 @@ const ContactUs: React.FC = () => {
                   kayankidz@gmail.com
                 </FormLabel>
               </a>
-            </FormControl>
+            </Box>
           </Flex>
           <Flex direction="row" align="left" w="full">
             <Icon as={PhoneIcon} w={5} h={5} color="teal.500" mr={4} />
-            <FormControl id="phone">
+            <Box id="phone">
               <FormLabel display="none">Phone Number</FormLabel>
               <a href="tel:+15879681800">
                 <FormLabel 
@@ -61,7 +61,7 @@ const ContactUs: React.FC = () => {
                   +1 587 968 1800
                 </FormLabel>
               </a>
-            </FormControl>
+            </Box>
           </Flex>
         </Flex>
 

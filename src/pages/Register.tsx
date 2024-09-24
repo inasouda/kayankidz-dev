@@ -4,7 +4,7 @@ import {  useNavigate } from 'react-router-dom';
 
 import * as Yup from 'yup';
 import axios from 'axios';
-// import emailjs from 'emailjs-com';
+// import emailjs from 'emailjs-com'; 
 import styled from 'styled-components';
 import {  FormLabel } from 'react-bootstrap';
 import logo from '../assets/imgs/logo2.webp';
@@ -191,8 +191,10 @@ const Register = () => {
   return (
     <PageContainer>
         <KayanHeader>
-            <KayanRegistrationHeader>KAYAN REGISTRATION </KayanRegistrationHeader>
+            <KayanRegistrationHeader>KAYAN REGISTRATION 
             <YearLabel> 2024-2025</YearLabel>
+            </KayanRegistrationHeader>
+           
              <KayanImg  src={logo} alt="Logo" />
         </KayanHeader>
         <FormContainer>
@@ -741,20 +743,23 @@ const KayanHeader = styled.div`
 const KayanRegistrationHeader = styled.div`
     font-size: 1.5rem;
     color: #333;
-    // font-family:docs-Tenali Ramakrishna;
     font-weight:bold;
     padding:1rem;
     width:100%;
-    background-color:orange;
+    color:white;
+    background-color:teal;
     max-width: 50rem;
     border-top-left-radius: 0.5rem; 
     border-top-right-radius: 0.5rem;
+    margin:0;
 `
-const YearLabel= styled.span`
+const YearLabel= styled.div`
      font-size: 0.8rem;
      width:100%;
-     background-color:orange;
-     padding:0 1rem;
+     background-color:teal;
+     color:white;
+     margin:0;
+ 
      padding-bottom:1rem;
 `;
 
@@ -771,7 +776,8 @@ const FormContainer = styled.div`
  `;  
 
 const PageContainer = styled.div`
-  background-color: rgb(255, 219, 166);
+  // background-color: rgb(255, 219, 166);
+  background-color:rgb(200 230 204);
   padding: 2rem; 
   min-height: 100vh;
   margin-bottom:0rem;
@@ -801,9 +807,13 @@ const SectionHeader = styled.h2`
   font-size: 1rem;
   color: #333;
   padding:1rem;
-  background-color:orange;
-  text-decoration: underline;
-  border-radius:0.5rem;
+  background-color:teal;
+  color:white;
+  // text-decoration: underline;
+  font-weight:bold;
+  // border-radius:0.5rem;
+  border-radius:1.2rem;
+
 `;
 
 const Label = styled.label`
@@ -837,12 +847,14 @@ const ErrorMessage = styled.div`
 `;
 
 const Button = styled.button`
-background-color: orange; 
-color:white;
+  background-color: teal; //orange
+  color:white;
+  font-weight:bold;
   padding: 0.75rem 1.5rem; 
   border: none;
-  border-radius: 0.25rem; 
-  font-size: 0.9rem;
+  border-radius: 1.2rem; 
+  width:7rem;
+  font-size: 1rem;  
   margin-right: 0.625rem; 
   transition: background-color 0.2s ease;
   &:hover {
@@ -866,8 +878,8 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
 const Input = styled.input`
   width: 100%;
   padding: 0.5rem 0;
-  border: none;
   border-bottom: 1px solid #ccc;
+  // border: none;  
   border-radius: 0;
   outline: none;
   font-size: 0.9rem;

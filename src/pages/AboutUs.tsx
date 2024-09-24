@@ -7,7 +7,7 @@ const AboutUs = () => {
     <Box
       id="about-us"
       bg="gray.100"
-      w={{ base: "100%", md: "80%", lg: "100%" }} 
+      w={{ base: "100%", md: "80%", lg: "80%" }} 
       mx="auto" 
       p="1.5rem"
       color="black"
