@@ -36,8 +36,8 @@ const RegisterButton = () => {
   };
 
   return (
-    <ChakraButton fontWeight={'bold'} fontSize={'1.2rem'} width={'10rem'} borderRadius={'3rem'} onClick={handleRegisterClick}>
-      Register
+    <ChakraButton fontWeight={'bold'}   boxShadow="xl"  fontSize={'1.2rem'} width={'12rem'} borderRadius={'10rem'} onClick={handleRegisterClick}>
+      Register Now
     </ChakraButton>
   );
 };

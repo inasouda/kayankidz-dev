@@ -16,6 +16,7 @@ import arImg3 from '../assets/imgs/arImg3.webp';
 import arImg4 from '../assets/imgs/arImg4.webp';
 import arImg5 from '../assets/imgs/arImg5.webp';
 import arImg6 from '../assets/imgs/arImg6.webp';
+import RegisterButton from '../components/RegisterButton';
 
 
 const Program: React.FC = () => {
@@ -106,6 +107,9 @@ const Program: React.FC = () => {
             }
           </Slider>
         </Box>
+        <Flex width='100%' alignItems={'center'} pt={3} justifyContent={'center'}>
+          <RegisterButton></RegisterButton>
+        </Flex>
         <ListItem>
           <HStack align="start">
             <ListIcon as={FaBook} color="teal.500" />
@@ -166,6 +170,9 @@ const Program: React.FC = () => {
             </Slider>
           </Box>
         </ListItem>
+        <Flex width='100%' alignItems={'center'} pt={3} justifyContent={'center'}>
+          <RegisterButton></RegisterButton>
+        </Flex>
       </List>
 
       <Flex justifyContent={'center'} >
@@ -173,7 +180,7 @@ const Program: React.FC = () => {
       </Flex>
     </Box>
   );
-};
+};  
 
 export default Program;
 
