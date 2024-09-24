@@ -728,7 +728,6 @@ const KayanHeader = styled.div`
     width: 22.5rem;
     margin: 0 auto;
     margin-bottom:2rem;
-    margin-top:3rem;
     background-color: #ffffff;
     border-radius: 0.625rem; 
     display:flex;
